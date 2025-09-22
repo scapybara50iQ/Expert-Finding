@@ -1,15 +1,18 @@
 # Expert-Finding
-В файле `data.csv` находится база данных, собранная из открытого каталога OpenAlex. С использованием этой базы данных осуществляется поиск экспертов в программном решении.
-Программа написана с использованием библиотеке PyLucene - расширение для Python для доступа к Java Lucene. Чтобы запустить код, необходимо установить библиотеку PyLucene.
-# Инструкции по установке Pylucene (Windows)
-1) Установить Docker Desktop - контейнеризатор приложений;
-2) В поиске найти Pylucene, установить image coady/pylucene;
-3) Зайти в терминал, ввести `docker run -it -p 8888:8888 coady/pylucene:latest` (для простой работы с `.ipynb` в дальнейшем), в приложении Docker должен появиться запущенный контейнер;
-4) В VsCode установить расширения Docker и Dev Containers, в соответствующей вкладке открыть запущенный контейнер с PyLucene в новом окне;
-5) Через терминал внутри контейнера установить jupyter `pip install jupyter`;
-6) Запустить jupyter, используя команду `jupyter notebook --ip 0.0.0.0 --port 8888 --no-browser --allow-root`;
-7) Открыть любой `.ipynb` файл, во вкладке Select kernel, вставить ссылку на сервер.
-# Пояснения к работе программы
-В файле `indexing` происходит индексация данных. 
-В файле `testing top-k` происходит демонстрация вероятности попадания автора в топ k релевантных авторов.
-В файле `searching for quary` происходит поиск среди научных сотрудников НГУ по запросу. Запрос записывается в файле `quary`.
+The `data.csv` file contains a database collected from the open OpenAlex catalog. This database is used for expert search in the software solution.  
+The program is written using the PyLucene library — a Python extension for accessing Java Lucene. To run the code, you need to install the PyLucene library.  
+
+# Instructions for Installing PyLucene (Windows)
+1) Install Docker Desktop — an application containerizer;  
+2) Search for PyLucene and install the `coady/pylucene` image;  
+3) Open the terminal and enter `docker run -it -p 8888:8888 coady/pylucene:latest` (for simple work with `.ipynb` later). A running container should appear in the Docker application;  
+4) In VS Code, install the Docker and Dev Containers extensions, then open the running PyLucene container in a new window via the corresponding tab;  
+5) Inside the container terminal, install Jupyter using `pip install jupyter`;  
+6) Launch Jupyter with the command:  
+   `jupyter notebook --ip 0.0.0.0 --port 8888 --no-browser --allow-root`;  
+7) Open any `.ipynb` file, and in the *Select kernel* tab, paste the server link.  
+
+# Program Explanation
+- The `indexing` file performs data indexing.  
+- The `testing top-k` file demonstrates the probability of an author appearing in the top-k relevant authors.  
+- The `searching for quary` file performs a search among NSU researchers by query. The query itself is written in the `quary` file.  
